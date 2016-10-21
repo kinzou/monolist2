@@ -21,18 +21,8 @@
       <%= render 'action' , item: @item %>
     </div>
     <div class="item-single-side">
-      <div class="side-box">
-        <h4 class="side-box-title">Haveしたユーザー</h4>
-        <div class="side-box-body">
-          <%= render @have_users %>
-        </div>
-      </div>
-      <div class="side-box">
-        <h4 class="side-box-title">Wantしたユーザー</h4>
-        <div class="side-box-body">
-          <%= render @want_users %>
-        </div>
-      </div>
+      <%= render "side_box", action: "Have", users: @have_users %>
+      <%= render "side_box", action: "Want", users: @want_users %>
       <div class="text-center">
         <% #TODO 正しいリンク先に %>
         <%= link_to('楽天詳細ページへ', @item.detail_page_url) %>

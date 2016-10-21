@@ -16,6 +16,10 @@ class UsersController < ApplicationController
   
   def show
     @items = @user.items.group('items.id')
+    @following_users_count = @user.following_users.count
+    @follower_users_count = @user.followed_users.count
+    @wnat_users_count = @user.want_items.count
+    @have_users_count = @user.have_items.count
   end
 
   private

@@ -1,0 +1,19 @@
+<h1><%= @title %></h1>
+
+<ul style="list-style:none;">
+  <% @items.each.with_index(1) do | item, index | %>
+    <% if index <= 3 %>
+      <li class="row">
+        <div style="color:red;" class="col-xs-1"><%= index %>位</div>
+        <div class="col-xs-2"><%= image_tag item.medium_image %></div>
+        <div class="col-xs-9"><%= item.title %></div>
+      </li>
+    <% else %>
+      <li class="row">
+        <div class="col-xs-1"><%= index %>位</div>
+        <div class="col-xs-2"><%= image_tag item.medium_image %></div>
+        <div class="col-xs-9"><%= item.title %></div>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
